@@ -1,0 +1,4 @@
+real = 1
+fake = 0
+loss = -(real*np.log(0.5) + (1-real)*np.log(0.5))
+print("Loss:", loss)

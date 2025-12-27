@@ -1,0 +1,3 @@
+z = np.random.randn(3)
+gen = np.dot(np.ones((2,3)), z)
+print("Generated:", gen)

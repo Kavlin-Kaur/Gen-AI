@@ -1,0 +1,5 @@
+import numpy as np
+
+z = np.random.randn(5)
+gen = np.tanh(np.dot(np.ones((4,5)), z))  # simple generator
+print("Fake output:", gen)
