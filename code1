@@ -1,0 +1,15 @@
+import numpy as np
+
+x_t = np.array([0.5, 0.1])  # input
+h_prev = np.array([0.0, 0.0])  # previous hidden
+W_z, U_z = np.ones((2,2)), np.ones((2,2))
+W_r, U_r = np.ones((2,2)), np.ones((2,2))
+W, U = np.ones((2,2)), np.ones((2,2))
+
+# gates
+z_t = 1 / (1 + np.exp(-(W_z @ x_t + U_z @ h_prev)))
+r_t = 1 / (1 + np.exp(-(W_r @ x_t + U_r @ h_prev)))
+h_tilde = np.tanh(W @ x_t + U @ (r_t * h_prev))
+h_t = (1 - z_t) * h_prev + z_t * h_tilde
+
+print("Hidden state:", h_t)
