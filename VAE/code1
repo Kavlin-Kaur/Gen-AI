@@ -1,0 +1,15 @@
+import numpy as np
+
+# Input
+x = np.array([0.5, 0.8])
+
+# Encoder (mean and log variance)
+mu = np.sum(x) * 0.1           # deterministic "mean"
+log_var = np.sum(x) * 0.05     # deterministic "log variance"
+
+# Reparameterization trick
+z = mu + np.exp(0.5*log_var) * 0.1
+
+# Decoder
+reconstructed = z * np.array([1.2, 0.8])
+print("Reconstructed output:", reconstructed)

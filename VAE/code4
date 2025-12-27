@@ -1,0 +1,8 @@
+import numpy as np
+
+x = np.array([0.1, 0.2, 0.3, 0.4])
+mu = 0.1*np.sum(x)
+log_var = 0.05*np.sum(x)
+z = mu + np.exp(0.5*log_var)*0.1
+reconstructed = z * np.array([0.2,0.3,0.4,0.5])
+print("Reconstructed output:", reconstructed)
